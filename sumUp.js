@@ -15,7 +15,7 @@ let start = 0
 let end = 0
 
 /** performence.now() is js object for checking performance of OS */
-
+// it takes linear time measurment.!
 start = performance.now()
 sumUp(10)
 end = performance.now()
