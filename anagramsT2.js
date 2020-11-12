@@ -1,5 +1,4 @@
 //anagrams('Test', 'Tset');
-
 function anagrams(stringA, stringB) {
   // Sanitize string inputs
   stringA = stringA.toLowerCase().replace(/[\W_]+/g, '')
