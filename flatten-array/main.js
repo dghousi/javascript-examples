@@ -28,7 +28,23 @@ let flatArrayT3 = arr.reduce((acc, curVal) => {
 
 console.log("The Result T3: \n"+flatArrayT3)
 
-// T4: using flat() method
 
-let flatT4 = arr.flat(6)
-console.log("The Result T4: \n"+flatT4)
+
+
+//  Obtaining a flattened array by specifying the depth
+
+let arr1 = [1, 2, [3, [4, 5, 6], 7], 8];
+
+let flatArr = arr1.flat()
+
+console.log(flatArr)
+
+// with depth
+
+let flatWithDipth = arr1.flat(2)
+
+console.log(flatWithDipth)
+
+
+
+
