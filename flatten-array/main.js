@@ -45,6 +45,25 @@ let flatWithDipth = arr1.flat(2)
 
 console.log(flatWithDipth)
 
+// using custom flat function we could flattten an array too.!
 
+let arr2 = [[1,2], [3, 4], [5, 6, [7, 8], 9], [10, 11, 12]]
 
+function customFlat(arr, depth) {
+    let result = []
 
+    arr.forEach((arrElement)=> {
+        if(Array.isArray(arrElement) && depth > 0 )
+        {
+            result.push(...customFlat(arrElement, depth-1))
+        } else {
+            result.push(arrElement)
+        }
+    });
+
+    return result
+}
+
+let customFlatResult = customFlat(arr2, 2)
+
+console.log("\n Custom flat result with depth: "+customFlatResult)
