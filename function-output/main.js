@@ -23,4 +23,19 @@ function withLet() {
 
 withLet() // with let keyword the output is: 0, 1, 2
 
+var length = 4
 
+function callback() {
+    console.log("\n CALLBACK: "+this.length)
+}
+
+const object = {
+    length: 5,
+    method()
+    {
+        console.log(arguments)
+        arguments[0]()
+    }
+}
+
+object.method(callback, 2, 3)
