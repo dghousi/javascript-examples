@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>The this keyword examples</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>
+        What is this?
+    </h1>
+    <pre>
+        In JavaScript, the this keyword refers to an object.
+
+        Which object depends on how this is being invoked (used or called).
+
+        The this keyword refers to different objects depending on how it is used:
+
+        In an object method, this refers to the object.
+        Alone, this refers to the global object.
+        In a function, this refers to the global object.
+        In a function, in strict mode, this is undefined.
+        In an event, this refers to the element that received the event.
+        Methods like call(), apply(), and bind() can refer this to any object.
+    </pre>
+
+    <h1><b>this</b> in a method</h1>
+
+    <pre>
+        When used in an object method, this refers to the object.
+
+        In the example on top of this page, this refers to the person object.
+
+        Because the fullName method is a method of the person object.
+    </pre>
+
+    <h1>        
+        this in a Function (Default)
+    </h1>
+
+    <pre>
+        In a function, the global object is the default binding for this.
+
+        In a browser window the global object is [object Window]:
+
+        Example
+        function myFunction() {
+            return this;
+        }
+    </pre>
+
+    <h1>        this in a Function (Strict)
+    </h1>
+
+    <pre>
+        JavaScript strict mode does not allow default binding.
+
+        So, when used in a function, in strict mode, this is undefined.
+
+        Example
+        "use strict";
+        function myFunction() {
+            return this;
+        }
+    </pre>
+
+    <h1>
+        this in Event Handlers
+    </h1>
+
+    <pre>
+        In HTML event handlers, this refers to the HTML element that received the event:
+
+        Example
+        <button onclick="this.style.display='none'">
+            Click to Remove Me!
+        </button>
+    </pre>
+
+    <h1>        
+        Object Method Binding
+    </h1>
+
+    <pre>
+        In these examples, this is the person object:
+
+        Example
+        const person = {
+            firstName  : "John",
+            lastName   : "Doe",
+            id         : 5566,
+            myFunction : function() {
+                return this;
+            }
+        };
+
+        <b>i.e. this.firstName is the firstName property of this (the person object). </b>
+    </pre>
+
+    <h1>        
+        Explicit Function Binding
+    </h1>
+
+    <pre>
+        The call() and apply() methods are predefined JavaScript methods.
+
+        They can both be used to call an object method with another object as argument.
+    </pre>
+
+    <h1>        
+        Function Borrowing
+    </h1>
+    <pre>
+        With the bind() method, an object can borrow a method from another object.
+
+        This example creates 2 objects (person and member).
+
+        The member object borrows the fullname method from the person object:
+
+        Example
+        const person = {
+            firstName:"John",
+            lastName: "Doe",
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        const member = {
+            firstName:"Hege",
+            lastName: "Nilsen",
+        }
+
+        let fullName = person.fullName.bind(member);
+    </pre>
+
+    <h1>
+        This Precedence
+    </h1>
+    <pre>
+        To determine which object this refers to; Use the following precedence of order.
+
+        Precedence	Object
+        1	bind()
+        2	apply() and call()
+        3	Object method
+        4	Global scope
+        Is this in a function being called using bind()?
+
+        Is this in a function is being called using apply()?
+
+        Is this in a function is being called using call()?
+
+        Is this in an object function (method)?
+
+        Is this in a function in the global scope.
+    </pre>
+    <script src='main.js'></script>
+</body>
+</html>
