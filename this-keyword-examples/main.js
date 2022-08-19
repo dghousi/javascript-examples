@@ -40,4 +40,22 @@ const person = {
   setTimeout(user2.logMessage, 1000); // in this situation the logMessage method is not called and this is refering to global object and it prints nothing;
   setTimeout(user2.logMessage(), 1000); // in this situation the logMessage method is called and this is refering to the parent object and it prints Dawlatzai Ghousi;
 
-  
+  setTimeout(() => {
+      user2.logMessage()
+  }, 1000);
+
+
+  /////////////
+
+  const user3 = {
+      name: 'Qeyam Jan',
+      greet() {
+          return `Hello, ${this.name}`
+      },
+      farewell:  ()  => {
+          return `Goodbye, ${this.name}` // this will be goodbye undefined and this will be refering to global object;
+      }
+  }
+
+  console.log(user3.greet()) // prints Hello Qeyam Jan
+  console.log(user3.farewell()) // prints GoodBye, 
