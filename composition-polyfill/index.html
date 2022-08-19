@@ -8,6 +8,30 @@
 </head>
 <body>
     <h1>Composition polyfill method!</h1>
+
+    <pre>
+        function addFive(a) {
+            return a+5   
+        }
+
+        function subtractTwo(a) {
+            return a-5
+        }
+
+        function multiplyFour(a) {
+            return a*4
+        }
+
+        const compose = (...functions) => {
+            return (args) => {
+                return functions.reduceRight((arg, fn) => fn(arg), args)
+            }
+        }
+
+        const evaluate = compose(addFive, subtractTwo, multiplyFour)
+
+        console.log(evaluate(5))
+    </pre>
     <script src='main.js'></script>
 </body>
 </html>
