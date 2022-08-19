@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+
+    <h1>What is the function output?</h1>
+
+    <pre>
+        function withVar() {
+            for (var index = 0; index < 3; index++) {
+               setTimeout(function log() {
+                   console.log(index)
+               }, index * 1000); 
+                
+            }
+        }
+        
+        withVar() // with var keyword the output is three times 3
+        
+        
+        
+        function withLet() {
+            for (let index = 0; index < 3; index++) {
+               setTimeout(function log() {
+                   console.log(index)
+               }, index * 1000); 
+                
+            }
+        }
+        
+        withLet() // with let keyword the output is: 0, 1, 2
+        
+        
+    </pre>
+    
+    <script src='main.js'></script>
+</body>
+</html>
