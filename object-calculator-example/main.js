@@ -24,7 +24,6 @@ let calculator = {
     },
 }
 
-
 calculator.read()
 
 console.log(calculator.sum())
