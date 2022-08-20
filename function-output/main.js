@@ -10,8 +10,6 @@ function withVar() {
 
 withVar() // with var keyword the output is three times 3
 
-
-
 function withLet() {
     for (let index = 0; index < 3; index++) {
        setTimeout(function log() {
