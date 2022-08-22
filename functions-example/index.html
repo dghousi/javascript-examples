@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>What is the output of these two methods?</h1>
+
+    <pre>
+        var a = 1;
+        var f1 = function() {
+            console.log(a)
+        }
+
+        var f2 = function () {
+            var a = 2
+            f1()
+        }
+
+        f2();
+        Output:<b>1</b>
+    </pre>
+    -------------------------------------------------------------
+    <pre>
+        var a = 1;
+        var f1 = function() {
+            console.log(a)
+        }
+
+        var f2 = function () {
+            a = 2
+            f1()
+        }
+
+        f2();
+        Output:<b>2</b>
+    </pre>
+    
+</body>
+</html>
