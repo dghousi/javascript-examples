@@ -40,3 +40,7 @@ arr[100] = 'fox'
 console.log(arr.length)
 
 // the reult is:101
+
+// incorrect way to define an arrow function that returns an empty object?
+
+console.log(() => {})
