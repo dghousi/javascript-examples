@@ -21,3 +21,22 @@ class Person {
 var person = new Person('Dawlatzai', '27')
 
 console.log(person)
+
+function addTax(total)
+{
+    return total * 1.05
+}
+
+addTax(50)
+
+// the result is : addTax(50)
+
+// What will be the console for `a.length` ?
+
+var arr = ['dog', 'cat', 'hen']
+
+arr[100] = 'fox'
+
+console.log(arr.length)
+
+// the reult is:101
